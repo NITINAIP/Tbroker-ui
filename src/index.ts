@@ -37,6 +37,9 @@ export type { BadgeProps, BadgeStatus } from "./components/Badge";
 export { Tabs } from "./components/Tabs";
 export type { TabsProps, TabItem } from "./components/Tabs";
 
+export { Stepper } from "./components/Stepper";
+export type { StepperProps, StepItem } from "./components/Stepper";
+
 export { Alert } from "./components/Alert";
 export type { AlertProps } from "./components/Alert";
 

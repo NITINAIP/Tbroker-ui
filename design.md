@@ -16,6 +16,7 @@ Implemented in `src/theme/tokens.ts` (raw values, exported as `tbrokerTokens`) a
 | Text muted | `#5A5248` | Descriptions |
 | Text faint | `#8A8178` / `#A9A29A` | Breadcrumb, meta, placeholder |
 | Border | `#E7E4DD` (`#DDD8CF` for inputs) | General borders |
+| ⚠️ Contrast note | — | `Text faint` (~3.8:1 on white) and `Text faint` light variant (~2.5:1 on white) both fall short of WCAG AA (4.5:1) for normal text. Fine for decorative/meta use; never use either as the sole carrier of status, error, or license-verification meaning — pair with color/icon redundancy or use `Text muted`/`Error`/`Success` instead. |
 | Background | `#FFFFFF` | Page background |
 | Background alt | `#FDF3EA` · `#FFF8F2` | Alternating section backgrounds |
 | Hero gradient | `linear-gradient(160deg,#FFF5EC 0%,#FDE6D3 100%)` | All hero sections |

@@ -34,3 +34,18 @@ export const Warning: Story = {
 export const Outlined: Story = {
   args: { status: "bull", variant: "outlined", label: "Filled" },
 };
+
+export const LicenseVerified: Story = {
+  name: "License: Verified",
+  args: { status: "bull", label: "Verified" },
+};
+
+export const LicenseExpired: Story = {
+  name: "License: Expired",
+  args: { status: "bear", label: "Expired" },
+};
+
+export const LicenseNotFound: Story = {
+  name: "License: Not Found",
+  args: { status: "neutral", label: "Not Found" },
+};

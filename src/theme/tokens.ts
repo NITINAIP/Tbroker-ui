@@ -11,7 +11,9 @@ export const tbrokerTokens = {
     primaryDark: "#C8340F",
     text: "#2A2A2A",
     textMuted: "#5A5248",
+    /** ~3.8:1 on white — below the 4.5:1 AA threshold for normal-size text. Meta/caption use only, never for text that alone conveys meaning (status, errors). */
     textFaint: "#8A8178",
+    /** ~2.5:1 on white — fails WCAG AA even for large text. Decorative/placeholder use only; never for status text or anything meaningful on its own. */
     textFaintLight: "#A9A29A",
     border: "#E7E4DD",
     borderInput: "#DDD8CF",
