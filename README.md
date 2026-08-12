@@ -30,7 +30,7 @@ Live component docs: **Storybook**, deployed automatically to GitHub Pages from 
 | `Sidebar` | Collapsible nav drawer with grouped items, badges, header/footer slots |
 | `AppLayout` | Page shell composing a sidebar, optional topbar, and scrollable content |
 
-All components are re-exported from the package root, along with `tbrokerTheme` (an MUI theme preconfigured with Tbroker's palette and typography).
+All components are re-exported from the package root, along with `tbrokerTheme` (an MUI theme built from Tbroker's brand tokens) and `tbrokerTokens` (the raw token values — colors, gradients, type scale, spacing/shape — for anything that has no MUI theme slot). See [`design.md`](./design.md) for the full token reference and how each one maps into the theme.
 
 ## Installation
 
@@ -39,6 +39,12 @@ npm install @tbroker/ui @mui/material @emotion/react @emotion/styled react react
 ```
 
 `@mui/material`, `@emotion/react`, `@emotion/styled`, `react`, and `react-dom` are peer dependencies — install them alongside the package.
+
+The theme uses **Sarabun** as its font family; it isn't bundled with the package, so load it yourself, e.g.:
+
+```html
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet" />
+```
 
 ## Usage
 

@@ -1,4 +1,5 @@
-export { tbrokerTheme } from "./theme";
+export { tbrokerTheme, tbrokerTokens } from "./theme";
+export type { TbrokerTokens } from "./theme";
 
 export { Button } from "./components/Button";
 export type { ButtonProps, ButtonTone } from "./components/Button";
