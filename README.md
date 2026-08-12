@@ -24,6 +24,8 @@ Live component docs: **Storybook**, deployed automatically to GitHub Pages from 
 | `Card` | Surface container with optional title/subheader/action header |
 | `Modal` | Dialog with title bar, close button, and actions row |
 | `Table` | Generic, column-driven data table |
+| `PersonCell` | Avatar + name (+ optional secondary line) table/list cell |
+| `RecordHeader` | Record detail header: breadcrumb, title, editable description, meta key/value row, actions |
 | `Badge` | Status chip with `bull`/`bear`/`neutral`/`warning` states |
 | `Tabs` | Tab strip with built-in panel rendering |
 | `Alert` | Inline alert/banner with optional title |

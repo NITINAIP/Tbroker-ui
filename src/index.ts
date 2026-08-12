@@ -25,6 +25,12 @@ export type { ModalProps } from "./components/Modal";
 export { Table } from "./components/Table";
 export type { TableProps, TableColumn } from "./components/Table";
 
+export { PersonCell } from "./components/PersonCell";
+export type { PersonCellProps } from "./components/PersonCell";
+
+export { RecordHeader } from "./components/RecordHeader";
+export type { RecordHeaderProps, RecordHeaderMetaItem } from "./components/RecordHeader";
+
 export { Badge } from "./components/Badge";
 export type { BadgeProps, BadgeStatus } from "./components/Badge";
 
