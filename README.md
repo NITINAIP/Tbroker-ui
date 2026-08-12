@@ -17,8 +17,10 @@ Live component docs: **Storybook**, deployed automatically to GitHub Pages from 
 | Component | Description |
 | --- | --- |
 | `Button` | Action button with `bull`/`bear` tone shortcuts for buy/sell actions |
-| `Input` | Text field (outlined, small by default) |
+| `FormField` | Label/control layout primitive (`layout="block"` label-above, or `"inline"` label-beside); used internally by `Input`, `Select`, `Autocomplete` |
+| `Input` | Text field covering any native `type` (text, email, password, tel, number, url, date, time, datetime-local, search, …) plus `multiline` |
 | `Select` | Dropdown built from an `options` array |
+| `Autocomplete` | Combobox/autocomplete built from an `options` array, single or multi-select |
 | `Card` | Surface container with optional title/subheader/action header |
 | `Modal` | Dialog with title bar, close button, and actions row |
 | `Table` | Generic, column-driven data table |

@@ -35,7 +35,7 @@ const meta: Meta<typeof Sidebar> = {
     groups,
     activeKey: "dashboard",
     header: (
-      <Typography variant="subtitle1" fontWeight={700}>
+      <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
         Tbroker
       </Typography>
     ),
@@ -75,7 +75,7 @@ function SidebarDemo() {
         collapsed={collapsed}
         onCollapsedChange={setCollapsed}
         header={
-          <Typography variant="subtitle1" fontWeight={700}>
+          <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
             Tbroker
           </Typography>
         }

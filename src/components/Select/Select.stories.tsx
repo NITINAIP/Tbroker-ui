@@ -24,6 +24,10 @@ type Story = StoryObj<typeof Select>;
 
 export const Default: Story = {};
 
+export const Inline: Story = {
+  args: { layout: "inline" },
+};
+
 export const WithHelperText: Story = {
   args: {
     helperText: "Stop limit orders are temporarily unavailable",

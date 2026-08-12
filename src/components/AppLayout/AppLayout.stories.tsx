@@ -52,14 +52,17 @@ function DashboardDemo() {
           groups={interactiveGroups}
           activeKey={activeKey}
           header={
-            <Typography variant="subtitle1" fontWeight={700}>
+            <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
               Tbroker
             </Typography>
           }
         />
       }
       topbar={
-        <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ width: "100%" }}>
+        <Stack
+          direction="row"
+          sx={{ width: "100%", alignItems: "center", justifyContent: "space-between" }}
+        >
           <Typography variant="h6">Dashboard</Typography>
           <Input placeholder="Search symbol…" size="small" sx={{ width: 240 }} />
         </Stack>

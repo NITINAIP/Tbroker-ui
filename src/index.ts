@@ -3,11 +3,17 @@ export { tbrokerTheme } from "./theme";
 export { Button } from "./components/Button";
 export type { ButtonProps, ButtonTone } from "./components/Button";
 
+export { FormField } from "./components/FormField";
+export type { FormFieldProps, FieldLayout } from "./components/FormField";
+
 export { Input } from "./components/Input";
 export type { InputProps } from "./components/Input";
 
 export { Select } from "./components/Select";
 export type { SelectProps, SelectOption } from "./components/Select";
+
+export { Autocomplete } from "./components/Autocomplete";
+export type { AutocompleteProps, AutocompleteOption } from "./components/Autocomplete";
 
 export { Card } from "./components/Card";
 export type { CardProps } from "./components/Card";

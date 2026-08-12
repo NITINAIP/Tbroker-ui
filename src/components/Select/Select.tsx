@@ -1,9 +1,7 @@
 import * as React from "react";
-import MuiFormControl from "@mui/material/FormControl";
-import MuiFormHelperText from "@mui/material/FormHelperText";
-import MuiInputLabel from "@mui/material/InputLabel";
 import MuiMenuItem from "@mui/material/MenuItem";
 import MuiSelect, { type SelectProps as MuiSelectProps } from "@mui/material/Select";
+import { FormField, type FieldLayout } from "../FormField/FormField";
 
 export interface SelectOption<T extends string | number = string> {
   label: string;
@@ -12,11 +10,14 @@ export interface SelectOption<T extends string | number = string> {
 }
 
 export interface SelectProps<T extends string | number = string>
-  extends Omit<MuiSelectProps<T>, "children"> {
-  label?: string;
+  extends Omit<MuiSelectProps<T>, "children" | "label"> {
+  label?: React.ReactNode;
   options: SelectOption<T>[];
   helperText?: React.ReactNode;
-  fullWidth?: boolean;
+  /** `"block"` (default) stacks the label above the select; `"inline"` places it to the left. */
+  layout?: FieldLayout;
+  /** Label column width when `layout="inline"`. Defaults to 140px. */
+  labelWidth?: number | string;
 }
 
 /**
@@ -27,26 +28,47 @@ export function Select<T extends string | number = string>({
   label,
   options,
   helperText,
+  layout = "block",
+  labelWidth,
   fullWidth = true,
   size = "small",
+  variant = "outlined",
+  required,
+  error,
   id,
   ...props
 }: SelectProps<T>) {
-  const labelId = id ? `${id}-label` : undefined;
+  const field = (
+    <MuiSelect<T>
+      id={id}
+      fullWidth={fullWidth}
+      size={size}
+      variant={variant}
+      required={required}
+      error={error}
+      {...props}
+    >
+      {options.map((option) => (
+        <MuiMenuItem key={option.value} value={option.value} disabled={option.disabled}>
+          {option.label}
+        </MuiMenuItem>
+      ))}
+    </MuiSelect>
+  );
+
+  if (!label && !helperText) return field;
 
   return (
-    <MuiFormControl fullWidth={fullWidth} size={size}>
-      {label ? <MuiInputLabel id={labelId}>{label}</MuiInputLabel> : null}
-      <MuiSelect<T> labelId={labelId} id={id} label={label} {...props}>
-        {options.map((option) => (
-          <MuiMenuItem key={option.value} value={option.value} disabled={option.disabled}>
-            {option.label}
-          </MuiMenuItem>
-        ))}
-      </MuiSelect>
-      {helperText ? (
-        <MuiFormHelperText error={props.error}>{helperText}</MuiFormHelperText>
-      ) : null}
-    </MuiFormControl>
+    <FormField
+      label={label}
+      htmlFor={id}
+      required={required}
+      layout={layout}
+      labelWidth={labelWidth}
+      helperText={helperText}
+      error={error}
+    >
+      {field}
+    </FormField>
   );
 }
