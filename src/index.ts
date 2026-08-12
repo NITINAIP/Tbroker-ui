@@ -27,4 +27,10 @@ export type { TabsProps, TabItem } from "./components/Tabs";
 export { Alert } from "./components/Alert";
 export type { AlertProps } from "./components/Alert";
 
+export { Sidebar } from "./components/Sidebar";
+export type { SidebarProps, SidebarNavItem, SidebarNavGroup } from "./components/Sidebar";
+
+export { AppLayout } from "./components/AppLayout";
+export type { AppLayoutProps } from "./components/AppLayout";
+
 import "./styles/tailwind.css";

@@ -25,6 +25,8 @@ Live component docs: **Storybook**, deployed automatically to GitHub Pages from 
 | `Badge` | Status chip with `bull`/`bear`/`neutral`/`warning` states |
 | `Tabs` | Tab strip with built-in panel rendering |
 | `Alert` | Inline alert/banner with optional title |
+| `Sidebar` | Collapsible nav drawer with grouped items, badges, header/footer slots |
+| `AppLayout` | Page shell composing a sidebar, optional topbar, and scrollable content |
 
 All components are re-exported from the package root, along with `tbrokerTheme` (an MUI theme preconfigured with Tbroker's palette and typography).
 
