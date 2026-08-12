@@ -1,8 +1,10 @@
 import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import MenuIcon from "@mui/icons-material/Menu";
 import { AppLayout } from "./AppLayout";
 import { Sidebar, type SidebarNavGroup } from "../Sidebar/Sidebar";
 import { Card } from "../Card/Card";
@@ -40,6 +42,7 @@ type Story = StoryObj<typeof AppLayout>;
 
 function DashboardDemo() {
   const [activeKey, setActiveKey] = React.useState("dashboard");
+  const [collapsed, setCollapsed] = React.useState(false);
   const interactiveGroups = groups.map((group) => ({
     ...group,
     items: group.items.map((item) => ({ ...item, onClick: () => setActiveKey(item.key) })),
@@ -51,6 +54,8 @@ function DashboardDemo() {
         <Sidebar
           groups={interactiveGroups}
           activeKey={activeKey}
+          collapsed={collapsed}
+          onCollapsedChange={setCollapsed}
           header={
             <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
               Tbroker
@@ -61,9 +66,18 @@ function DashboardDemo() {
       topbar={
         <Stack
           direction="row"
-          sx={{ width: "100%", alignItems: "center", justifyContent: "space-between" }}
+          sx={{ width: "100%", alignItems: "center", justifyContent: "space-between", gap: 2 }}
         >
-          <Typography variant="h6">Dashboard</Typography>
+          <Stack direction="row" sx={{ alignItems: "center", gap: 1 }}>
+            <IconButton
+              size="small"
+              aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+              onClick={() => setCollapsed(!collapsed)}
+            >
+              <MenuIcon fontSize="small" />
+            </IconButton>
+            <Typography variant="h6">Dashboard</Typography>
+          </Stack>
           <Input placeholder="Search symbol…" size="small" sx={{ width: 240 }} />
         </Stack>
       }
