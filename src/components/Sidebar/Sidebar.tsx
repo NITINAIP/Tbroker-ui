@@ -96,7 +96,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         ) : null}
       </MuiBox>
       <MuiDivider />
-      <MuiBox sx={{ flex: 1, overflowY: "auto", py: 1 }}>
+      <MuiBox sx={{ flex: 1, overflowY: "auto", overscrollBehavior: "contain", py: 1 }}>
         {groups.map((group) => (
           <MuiBox key={group.key} sx={{ mb: 1 }}>
             {group.title && !collapsed ? (
@@ -120,6 +120,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     selected={item.key === activeKey}
                     disabled={item.disabled}
                     onClick={item.onClick}
+                    aria-label={collapsed ? item.label : undefined}
                     sx={{ mx: 1, borderRadius: 1, justifyContent: collapsed ? "center" : "flex-start" }}
                   >
                     {item.icon ? (

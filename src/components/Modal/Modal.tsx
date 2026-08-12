@@ -38,7 +38,9 @@ export const Modal: React.FC<ModalProps> = ({
         </MuiIconButton>
       </MuiDialogTitle>
     ) : null}
-    <MuiDialogContent dividers={Boolean(title)}>{children}</MuiDialogContent>
+    <MuiDialogContent dividers={Boolean(title)} sx={{ overscrollBehavior: "contain" }}>
+      {children}
+    </MuiDialogContent>
     {actions ? <MuiDialogActions>{actions}</MuiDialogActions> : null}
   </MuiDialog>
 );

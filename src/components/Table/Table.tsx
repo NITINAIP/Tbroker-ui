@@ -53,6 +53,8 @@ export function Table<Row>({
               </MuiTableCell>
             </MuiTableRow>
           ) : (
+            // Renders every row — for row sets over ~50, virtualize upstream
+            // (e.g. `virtua` or `content-visibility: auto`) before passing `rows` in.
             rows.map((row, index) => (
               <MuiTableRow key={getRowKey(row, index)} hover>
                 {columns.map((column) => (

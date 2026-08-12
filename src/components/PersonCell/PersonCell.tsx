@@ -26,7 +26,11 @@ export const PersonCell: React.FC<PersonCellProps> = ({
   size = 32,
 }) => (
   <MuiStack direction="row" spacing={1.5} sx={{ alignItems: "center" }}>
-    <MuiAvatar src={avatarSrc} sx={{ width: size, height: size, fontSize: size * 0.4 }}>
+    <MuiAvatar
+      src={avatarSrc}
+      alt={typeof name === "string" ? name : avatarText}
+      sx={{ width: size, height: size, fontSize: size * 0.4 }}
+    >
       {avatarText}
     </MuiAvatar>
     <MuiBox sx={{ minWidth: 0 }}>
