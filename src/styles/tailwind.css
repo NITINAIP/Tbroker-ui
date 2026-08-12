@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  --color-tbroker-navy: #0b1f3a;
+  --color-tbroker-blue: #1a56db;
+  --color-tbroker-teal: #0f9d8c;
+  --color-tbroker-red: #d92d20;
+  --color-tbroker-amber: #f79009;
+  --color-tbroker-slate-50: #f8fafc;
+  --color-tbroker-slate-900: #0f172a;
+}
+
+/*
+ * MUI injects its own styles via Emotion, which is unaware of Tailwind's
+ * cascade layers. Tailwind's utility classes are kept outside of MUI's
+ * `sx`/styled output, so apply them for layout & spacing only
+ * (flex, grid, gap, padding, margin) and let MUI own component look & feel.
+ */
