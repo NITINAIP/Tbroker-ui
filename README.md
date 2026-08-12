@@ -37,10 +37,10 @@ All components are re-exported from the package root, along with `tbrokerTheme` 
 ## Installation
 
 ```bash
-npm install @tbroker/ui @mui/material @emotion/react @emotion/styled react react-dom
+npm install @tbroker/ui @mui/material @mui/icons-material @emotion/react @emotion/styled react react-dom
 ```
 
-`@mui/material`, `@emotion/react`, `@emotion/styled`, `react`, and `react-dom` are peer dependencies — install them alongside the package.
+`@mui/material`, `@mui/icons-material`, `@emotion/react`, `@emotion/styled`, `react`, and `react-dom` are peer dependencies — install them alongside the package.
 
 The theme uses **Sarabun** as its font family; it isn't bundled with the package, so load it yourself, e.g.:
 

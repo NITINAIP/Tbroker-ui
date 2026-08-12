@@ -4,6 +4,7 @@ import MuiDialogActions from "@mui/material/DialogActions";
 import MuiDialogContent from "@mui/material/DialogContent";
 import MuiDialogTitle from "@mui/material/DialogTitle";
 import MuiIconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
 
 export interface ModalProps extends Omit<MuiDialogProps, "title"> {
   title?: React.ReactNode;
@@ -34,7 +35,7 @@ export const Modal: React.FC<ModalProps> = ({
           size="small"
           onClick={(event) => onClose(event, "backdropClick")}
         >
-          ✕
+          <CloseIcon fontSize="small" />
         </MuiIconButton>
       </MuiDialogTitle>
     ) : null}

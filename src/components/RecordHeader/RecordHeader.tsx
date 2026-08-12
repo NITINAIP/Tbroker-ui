@@ -3,6 +3,7 @@ import MuiBox from "@mui/material/Box";
 import MuiIconButton from "@mui/material/IconButton";
 import MuiStack from "@mui/material/Stack";
 import MuiTypography from "@mui/material/Typography";
+import EditIcon from "@mui/icons-material/Edit";
 
 export interface RecordHeaderMetaItem {
   label: string;
@@ -74,7 +75,7 @@ export const RecordHeader: React.FC<RecordHeaderProps> = ({
         </MuiTypography>
         {onEditDescription ? (
           <MuiIconButton size="small" aria-label="Edit description" onClick={onEditDescription}>
-            ✎
+            <EditIcon fontSize="small" />
           </MuiIconButton>
         ) : null}
       </MuiStack>

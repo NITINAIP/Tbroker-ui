@@ -3,7 +3,14 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import dts from "vite-plugin-dts";
 
-const externalPackages = ["react", "react-dom", "@mui/material", "@emotion/react", "@emotion/styled"];
+const externalPackages = [
+  "react",
+  "react-dom",
+  "@mui/material",
+  "@mui/icons-material",
+  "@emotion/react",
+  "@emotion/styled",
+];
 const isExternal = (id: string) => externalPackages.some((pkg) => id === pkg || id.startsWith(`${pkg}/`));
 
 export default defineConfig({

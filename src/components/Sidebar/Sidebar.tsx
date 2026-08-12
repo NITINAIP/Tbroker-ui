@@ -10,6 +10,8 @@ import MuiListItemIcon from "@mui/material/ListItemIcon";
 import MuiListItemText from "@mui/material/ListItemText";
 import MuiTooltip from "@mui/material/Tooltip";
 import MuiTypography from "@mui/material/Typography";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 export interface SidebarNavItem {
   key: string;
@@ -91,7 +93,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             onClick={() => onCollapsedChange(!collapsed)}
             aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
           >
-            {collapsed ? "»" : "«"}
+            {collapsed ? <ChevronRightIcon fontSize="small" /> : <ChevronLeftIcon fontSize="small" />}
           </MuiIconButton>
         ) : null}
       </MuiBox>
