@@ -10,8 +10,8 @@ Implemented in `src/theme/tokens.ts` (raw values, exported as `tbrokerTokens`) a
 |---|---|---|
 | Primary | `#F47B20` | Primary buttons, icons, accent lines, active dots |
 | Primary Dark | `#C8340F` | Emphasis text, badges, primary button hover |
-| Primary gradient | `linear-gradient(135deg,#F8A45C 0%,#F47B20 45%,#D4470F 100%)` | All CTA buttons |
-| Primary gradient hover | `linear-gradient(135deg,#C8340F 0%,#9A2A08 100%)` | CTA button hover |
+| Primary gradient | `linear-gradient(135deg,#F8A45C 0%,#F47B20 45%,#D4470F 100%)` | Kept as a raw token for optional use (e.g. hero-adjacent accents). **No longer the default CTA button style** — `<Button>` renders solid `Primary` with a `Primary Dark` + hover-shadow lift instead, to match 2026 flat/solid button conventions rather than the original heavy 3-stop gradient |
+| Primary gradient hover | `linear-gradient(135deg,#C8340F 0%,#9A2A08 100%)` | Same as above — retained as a token, unused by `<Button>` |
 | Text | `#2A2A2A` | Headings and body text |
 | Text muted | `#5A5248` | Descriptions |
 | Text faint | `#8A8178` / `#A9A29A` | Breadcrumb, meta, placeholder |
@@ -28,7 +28,7 @@ Implemented in `src/theme/tokens.ts` (raw values, exported as `tbrokerTokens`) a
 
 - Font: **Sarabun**, weights 400/600/700, for both headings and body
 - Desktop sizes: h1 40px · h2 32px · h3 25px · body 15–17px · meta 12.5–13.5px
-- Mobile sizes: h1 27px · h2 23px · h3 20px · body 14–15px
+- Mobile sizes: h1 27px · h2 23px · h3 20px · body **16px** (raised from the original 14–15px spec — 16px is the floor for readable mobile body text; only headings scale down below `sm`)
 - Body line-height: 1.75–1.95 · `text-wrap: pretty` for long headings
 
 ## Spacing & Shape
@@ -36,8 +36,14 @@ Implemented in `src/theme/tokens.ts` (raw values, exported as `tbrokerTokens`) a
 - Container `max-width: 1200px`, side padding 24px
 - Section padding: desktop `88px 0` · mobile `50px 0`
 - Radius: cards 10–12px · buttons 9–10px · badges 6px
-- Shadow: card `0 2px 8px rgba(0,0,0,.06)`; news card hover `0 6px 18px rgba(0,0,0,.10)`
+- Shadow: card `0 2px 8px rgba(0,0,0,.06)`; hover lift `0 6px 18px rgba(0,0,0,.10)`
 - Breakpoints: desktop 1440px / mobile 390px
+
+## Motion
+
+- Durations: fast `120ms` (press feedback) · base `200ms` (hover/focus transitions) · slow `320ms` (larger layout changes, e.g. Sidebar collapse)
+- Easing: `cubic-bezier(0.4, 0, 0.2, 1)` (Material standard ease-in-out) for all of the above
+- Currently wired: `<Button>` hover (background + shadow), `<Card interactive>` hover shadow
 
 ## Layout primitives
 
@@ -64,4 +70,5 @@ Reference only — not built as components yet:
 | Container max-width / padding | `MuiContainer` override in `theme/index.ts` | MUI's default `lg` breakpoint is already 1200px, matching the spec exactly — only the 24px side padding needed overriding |
 | Section padding | `tbrokerTokens.layout.sectionPadding` | No page-section component yet; apply directly where a page builds its own sections |
 | Radius (card/button/badge) | `shape.borderRadius` (card, theme base) + `MuiButton`/`MuiChip` overrides | |
-| Shadows | `MuiCard` override (`shape.shadow.card`); `shape.shadow.hover` exported for hover states not yet wired to a component | |
+| Shadows | `MuiCard` override (`shape.shadow.card`) for the resting state; `shape.shadow.hover` used by `<Button>`'s hover state and by `<Card interactive>`'s hover state | |
+| Motion (duration/easing) | `tbrokerTokens.motion` | No MUI theme slot — read directly and applied via `sx`/`styleOverrides` in `<Button>` and `<Card interactive>`; not (yet) plugged into MUI's own `theme.transitions` config |

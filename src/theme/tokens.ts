@@ -40,7 +40,8 @@ export const tbrokerTokens = {
       h1: { desktop: 40, mobile: 27 },
       h2: { desktop: 32, mobile: 23 },
       h3: { desktop: 25, mobile: 20 },
-      body: { desktop: 16, mobile: 14.5 },
+      /** Mobile matches desktop — 16px is the minimum readable body size on mobile; only headings scale down. */
+      body: { desktop: 16, mobile: 16 },
       meta: { desktop: 13, mobile: 13 },
     },
     bodyLineHeight: 1.85,
@@ -51,6 +52,12 @@ export const tbrokerTokens = {
       card: "0 2px 8px rgba(0,0,0,.06)",
       hover: "0 6px 18px rgba(0,0,0,.10)",
     },
+  },
+  motion: {
+    /** Micro-interaction durations in ms — hover/focus/pressed state changes. */
+    duration: { fast: 120, base: 200, slow: 320 },
+    /** Material's standard ease-in-out curve, paired with the durations above. */
+    easing: "cubic-bezier(0.4, 0, 0.2, 1)",
   },
   layout: {
     containerMaxWidth: 1200,

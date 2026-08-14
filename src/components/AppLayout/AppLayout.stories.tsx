@@ -5,6 +5,11 @@ import IconButton from "@mui/material/IconButton";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import StarIcon from "@mui/icons-material/Star";
+import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
+import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
+import SettingsIcon from "@mui/icons-material/Settings";
 import { AppLayout } from "./AppLayout";
 import { Sidebar, type SidebarNavGroup } from "../Sidebar/Sidebar";
 import { Card } from "../Card/Card";
@@ -16,17 +21,17 @@ const groups: SidebarNavGroup[] = [
     key: "trading",
     title: "Trading",
     items: [
-      { key: "dashboard", label: "Dashboard", icon: "📊" },
-      { key: "watchlist", label: "Watchlist", icon: "⭐" },
-      { key: "orders", label: "Orders", icon: "🧾", badge: 3 },
+      { key: "dashboard", label: "Dashboard", icon: <DashboardIcon fontSize="small" /> },
+      { key: "watchlist", label: "Watchlist", icon: <StarIcon fontSize="small" /> },
+      { key: "orders", label: "Orders", icon: <ReceiptLongIcon fontSize="small" />, badge: 3 },
     ],
   },
   {
     key: "account",
     title: "Account",
     items: [
-      { key: "wallet", label: "Wallet", icon: "💳" },
-      { key: "settings", label: "Settings", icon: "⚙️" },
+      { key: "wallet", label: "Wallet", icon: <AccountBalanceWalletIcon fontSize="small" /> },
+      { key: "settings", label: "Settings", icon: <SettingsIcon fontSize="small" /> },
     ],
   },
 ];

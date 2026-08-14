@@ -3,6 +3,13 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import StarIcon from "@mui/icons-material/Star";
+import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
+import SettingsIcon from "@mui/icons-material/Settings";
+import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import { Sidebar, type SidebarNavGroup } from "./Sidebar";
 
 const groups: SidebarNavGroup[] = [
@@ -10,19 +17,19 @@ const groups: SidebarNavGroup[] = [
     key: "trading",
     title: "Trading",
     items: [
-      { key: "dashboard", label: "Dashboard", icon: "📊" },
-      { key: "watchlist", label: "Watchlist", icon: "⭐" },
-      { key: "orders", label: "Orders", icon: "🧾", badge: 3 },
-      { key: "positions", label: "Positions", icon: "📈" },
+      { key: "dashboard", label: "Dashboard", icon: <DashboardIcon fontSize="small" /> },
+      { key: "watchlist", label: "Watchlist", icon: <StarIcon fontSize="small" /> },
+      { key: "orders", label: "Orders", icon: <ReceiptLongIcon fontSize="small" />, badge: 3 },
+      { key: "positions", label: "Positions", icon: <TrendingUpIcon fontSize="small" /> },
     ],
   },
   {
     key: "account",
     title: "Account",
     items: [
-      { key: "wallet", label: "Wallet", icon: "💳" },
-      { key: "settings", label: "Settings", icon: "⚙️" },
-      { key: "support", label: "Support", icon: "💬", disabled: true },
+      { key: "wallet", label: "Wallet", icon: <AccountBalanceWalletIcon fontSize="small" /> },
+      { key: "settings", label: "Settings", icon: <SettingsIcon fontSize="small" /> },
+      { key: "support", label: "Support", icon: <SupportAgentIcon fontSize="small" />, disabled: true },
     ],
   },
 ];

@@ -35,3 +35,14 @@ export const NoHeader: Story = {
     </Card>
   ),
 };
+
+export const Interactive: Story = {
+  args: { interactive: true },
+  render: (args) => (
+    <Card {...args} sx={{ width: 320 }} onClick={() => {}}>
+      <Typography variant="body2" color="text.secondary">
+        Hover to see the elevation lift — use `interactive` when the whole card is a click target.
+      </Typography>
+    </Card>
+  ),
+};

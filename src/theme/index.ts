@@ -29,7 +29,7 @@ declare module "@mui/material/Chip" {
   }
 }
 
-const { color, gradient, typography: type, shape, layout } = tbrokerTokens;
+const { color, typography: type, shape, layout, motion } = tbrokerTokens;
 
 const theme = createTheme({
   palette: {
@@ -114,14 +114,20 @@ theme.components = {
   MuiButton: {
     defaultProps: { disableElevation: true },
     styleOverrides: {
-      root: { borderRadius: shape.radius.button },
+      root: {
+        borderRadius: shape.radius.button,
+        transition: `background-color ${motion.duration.base}ms ${motion.easing}, box-shadow ${motion.duration.base}ms ${motion.easing}`,
+      },
     },
     variants: [
       {
         props: { variant: "contained", color: "primary" },
         style: {
-          background: gradient.primary,
-          "&:hover": { background: gradient.primaryHover },
+          backgroundColor: color.primary,
+          "&:hover": {
+            backgroundColor: color.primaryDark,
+            boxShadow: shape.shadow.hover,
+          },
         },
       },
     ],
